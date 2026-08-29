@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NbScripts — Roblox Scripts & Injectors</title>
+<meta name="description" content="NbScripts — free ready-to-use Roblox scripts and injectors for PC and mobile. Scripts with key and without, for popular games like Blox Fruits, Steal a Brainrot and more.">
+<meta name="keywords" content="roblox scripts, roblox injector, roblox exploit, free roblox scripts, roblox script hub, blox fruits script, roblox pastebin, nbscripts">
+<meta name="robots" content="index, follow">
+<meta name="author" content="NbScripts">
+<link rel="canonical" href="https://nbscripts.com/">
+
+<!-- Open Graph / Facebook, Discord, Telegram previews -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="NbScripts">
+<meta property="og:title" content="NbScripts — Roblox Scripts & Injectors">
+<meta property="og:description" content="Free ready-to-use Roblox scripts and injectors for PC and mobile. Pick one, support the creators and run it.">
+<meta property="og:url" content="https://nbscripts.com/">
+<meta property="og:image" content="https://nbscripts.com/og-cover.png">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ru_RU">
+
+<!-- Twitter card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="NbScripts — Roblox Scripts & Injectors">
+<meta name="twitter:description" content="Free ready-to-use Roblox scripts and injectors for PC and mobile.">
+<meta name="twitter:image" content="https://nbscripts.com/og-cover.png">
+
+<meta name="theme-color" content="#4F46E5">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%234F46E5'/%3E%3Ctext x='50%25' y='58%25' font-family='Arial, sans-serif' font-size='30' font-weight='800' fill='white' text-anchor='middle'%3ENb%3C/text%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%234F46E5'/%3E%3Ctext x='50%25' y='58%25' font-family='Arial, sans-serif' font-size='30' font-weight='800' fill='white' text-anchor='middle'%3ENb%3C/text%3E%3C/svg%3E">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "NbScripts",
+  "url": "https://nbscripts.com/",
+  "description": "Free ready-to-use Roblox scripts and injectors for PC and mobile.",
+  "inLanguage": ["en", "ru"]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F5F6FA;
+    --surface:#FFFFFF;
+    --border:#E6E8F0;
+    --text:#161A25;
+    --muted:#727889;
+    --accent:#4F46E5;
+    --accent-2:#0EA5E9;
+    --key:#F59E0B;
+    --nokey:#10B981;
+    --danger:#EF4444;
+    --mono:'JetBrains Mono', monospace;
+    --sans:'Manrope', sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:100vh;line-height:1.5;}
+  a{color:inherit;}
+  button{font-family:var(--sans);cursor:pointer;}
+  input,textarea{font-family:var(--sans);}
+  ::selection{background:var(--accent);color:#fff;}
+
+  @keyframes fadeUp{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+  @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+  @keyframes overlayIn{from{opacity:0;}to{opacity:1;}}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 20px 80px;animation:fadeIn .35s ease-out;}
+
+  /* ---------- Nav ---------- */
+  header.nav{
+    position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.92);backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--border);
+  }
+  .nav-inner{
+    max-width:1100px;margin:0 auto;padding:16px 20px;
+    display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px;
+  }
+  .nav-inner>.logo{justify-self:start;}
+  .nav-inner>.tabs{justify-self:center;}
+  .nav-inner>.nav-right{justify-self:end;}
+  .logo{
+    font-weight:800;font-size:19px;letter-spacing:-0.3px;text-decoration:none;
+    display:flex;align-items:center;gap:8px;color:var(--text);
+  }
+  .logo .mark{
+    width:26px;height:26px;border-radius:8px;
+    background:linear-gradient(135deg,var(--accent),var(--accent-2));
+    display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:800;
+  }
+  .tabs{display:flex;gap:4px;background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:4px;}
+  .tab-btn{
+    border:none;background:transparent;color:var(--muted);padding:8px 16px;border-radius:7px;
+    font-size:13.5px;font-weight:700;text-decoration:none;transition:background .15s, color .15s;
+  }
+  .tab-btn.active{background:var(--surface);color:var(--accent);box-shadow:0 2px 6px rgba(20,20,50,0.08);}
+  .tab-btn:hover:not(.active){color:var(--text);}
+  .lang-switch{display:flex;border:1px solid var(--border);border-radius:9px;overflow:hidden;}
+  .lang-btn{
+    border:none;background:var(--surface);color:var(--muted);padding:9px 12px;font-size:12.5px;
+    font-weight:700;font-family:var(--mono);
+  }
+  .lang-btn.active{background:var(--accent);color:#fff;}
+  .btn{
+    border:1px solid var(--border);background:var(--surface);color:var(--text);
+    padding:10px 16px;border-radius:9px;font-size:14px;font-weight:700;
+    transition:border-color .15s, transform .1s, box-shadow .15s;
+  }
+  .btn:hover{border-color:var(--accent);}
+  .btn:active{transform:scale(0.97);}
+  .btn-accent{
+    background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;border:none;
+    box-shadow:0 4px 14px rgba(79,70,229,0.28);
+  }
+  .btn-accent:hover{filter:brightness(1.06);}
+  .btn-accent:disabled{opacity:0.45;cursor:not-allowed;filter:none;box-shadow:none;}
+  .btn-ghost{background:transparent;border-color:transparent;}
+  .btn:disabled{cursor:not-allowed;}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    margin-top:26px;border-radius:20px;padding:48px 36px;text-align:center;color:#fff;position:relative;overflow:hidden;
+    background:linear-gradient(120deg,#4F46E5,#6D5CE0 40%,#0EA5E9);
+    background-size:200% 200%;
+    animation:gradientShift 10s ease infinite;
+  }
+  @keyframes gradientShift{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+  }
+  .hero h1{font-size:36px;margin:0 0 12px;font-weight:800;letter-spacing:-0.7px;}
+  .hero p{margin:0 auto 22px;max-width:560px;font-size:15px;opacity:0.92;}
+  .hero .pill{
+    display:inline-block;background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.3);
+    padding:9px 18px;border-radius:30px;font-size:13px;font-weight:700;font-family:var(--mono);
+  }
+
+  /* ---------- Search ---------- */
+  .search-wrap{margin:28px auto 0;max-width:640px;padding:0 20px;}
+  .search-box{
+    display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);
+    border-radius:12px;padding:6px 6px 6px 16px;box-shadow:0 6px 18px rgba(20,20,50,0.05);
+  }
+  .search-box svg{flex-shrink:0;color:var(--muted);}
+  .search-box input{
+    flex:1;border:none;outline:none;background:transparent;padding:10px 0;font-size:14px;color:var(--text);
+  }
+
+  /* ---------- Toolbar ---------- */
+  .toolbar{display:flex;align-items:center;justify-content:space-between;margin:24px 0 16px;}
+  .toolbar .count{color:var(--muted);font-size:13px;font-family:var(--mono);}
+
+  /* ---------- Grid ---------- */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill, minmax(230px, 1fr));gap:18px;}
+  .card{
+    background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;
+    text-decoration:none;color:var(--text);transition:transform .15s, box-shadow .15s, border-color .15s;
+    display:flex;flex-direction:column;
+    animation:fadeUp .45s ease-out both;
+  }
+  .card:hover{transform:translateY(-5px);box-shadow:0 16px 32px rgba(20,20,50,0.10);border-color:#D9DCEA;}
+  .thumb{
+    aspect-ratio:16/9;width:100%;object-fit:contain;background:linear-gradient(135deg,#EEF0FB,#E4F4FC);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .thumb.ph{font-size:34px;font-weight:800;color:#fff;}
+  .card-body{padding:14px 15px 16px;display:flex;flex-direction:column;gap:8px;flex:1;}
+  .card-name{font-weight:800;font-size:15px;line-height:1.3;}
+  .card-meta{display:flex;align-items:center;justify-content:space-between;gap:8px;}
+  .card-game{color:var(--muted);font-size:12.5px;font-family:var(--mono);}
+  .card-date{color:#A2A8B8;font-size:11px;font-family:var(--mono);}
+  .badge{
+    font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:0.3px;
+    padding:3px 9px;border-radius:20px;border:1px solid;white-space:nowrap;
+  }
+  .badge.key{color:var(--key);border-color:var(--key);background:rgba(245,158,11,0.08);}
+  .badge.nokey{color:var(--nokey);border-color:var(--nokey);background:rgba(16,185,129,0.08);}
+  .badge.platform{color:var(--accent-2);border-color:var(--accent-2);background:rgba(14,165,233,0.08);}
+
+  .empty, .error, .loading{padding:50px 20px;text-align:center;color:var(--muted);font-family:var(--mono);font-size:14px;grid-column:1/-1;}
+  .error{color:var(--danger);}
+
+  /* ---------- Script page ---------- */
+  .backlink{
+    display:inline-flex;align-items:center;gap:6px;color:var(--muted);text-decoration:none;
+    font-family:var(--mono);font-size:13px;margin:24px 0 18px;
+  }
+  .backlink:hover{color:var(--accent);}
+  .wrap-detail{max-width:1280px;}
+  .detail-layout{display:grid;grid-template-columns:1fr minmax(0,680px) 1fr;gap:24px;align-items:start;}
+  .detail-main{grid-column:2;min-width:0;}
+  .detail-aside{grid-column:3;justify-self:start;width:100%;max-width:280px;position:sticky;top:86px;}
+  @media(max-width:980px){
+    .detail-layout{grid-template-columns:minmax(0,680px);justify-content:center;}
+    .detail-main{grid-column:1;}
+    .detail-aside{grid-column:1;justify-self:center;max-width:680px;margin-top:32px;position:static;}
+  }
+  .aside-title{font-size:12px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.4px;margin-bottom:12px;font-family:var(--mono);}
+  .aside-list{display:flex;flex-direction:column;gap:10px;}
+  .aside-card{
+    display:flex;gap:10px;align-items:center;background:var(--surface);border:1px solid var(--border);
+    border-radius:12px;padding:8px;text-decoration:none;color:var(--text);
+    transition:border-color .15s, transform .15s;animation:fadeUp .35s ease-out both;
+  }
+  .aside-card:hover{border-color:var(--accent);transform:translateX(3px);}
+  .aside-thumb{width:56px;height:56px;border-radius:8px;object-fit:cover;flex-shrink:0;background:linear-gradient(135deg,#EEF0FB,#E4F4FC);}
+  .aside-thumb.ph{display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:17px;}
+  .aside-card-body{min-width:0;}
+  .aside-card-name{font-weight:700;font-size:13px;line-height:1.3;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .aside-card-game{color:var(--muted);font-size:11.5px;font-family:var(--mono);margin-top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .script-card{
+    background:var(--surface);border:1px solid var(--border);border-radius:16px;overflow:hidden;margin-bottom:26px;
+    animation:fadeUp .4s ease-out both;
+  }
+  .script-desc{color:var(--text);font-size:14px;line-height:1.6;margin:0 0 16px;white-space:pre-wrap;word-break:break-word;}
+  .btn-report{
+    width:100%;padding:11px;font-size:13px;margin-top:10px;background:transparent;
+    border:1px solid var(--border);color:var(--muted);
+  }
+  .btn-report:hover{border-color:var(--danger);color:var(--danger);}
+  .banner-wrap{width:100%;aspect-ratio:21/8;background:linear-gradient(135deg,#EEF0FB,#E4F4FC);overflow:hidden;position:relative;}
+  .script-banner{width:100%;height:100%;object-fit:contain;background:#0F1119;}
+  .script-body{padding:26px;}
+  .script-body h2{margin:0 0 8px;font-size:24px;font-weight:800;letter-spacing:-0.4px;}
+  .meta-line{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:18px;}
+  .meta-line .game{color:var(--muted);font-family:var(--mono);font-size:14px;}
+  .get-btn{width:100%;padding:14px;font-size:15px;border-radius:11px;margin-top:6px;}
+
+  /* ---------- Comments ---------- */
+  .comments h3{font-size:16px;color:var(--text);margin-bottom:14px;font-weight:800;}
+  .comment-form{
+    display:flex;flex-direction:column;gap:10px;border:1px solid var(--border);
+    background:var(--surface);padding:16px;border-radius:14px;margin-bottom:20px;
+  }
+  .comment-form input, .comment-form textarea{
+    background:#FAFBFD;border:1px solid var(--border);color:var(--text);
+    padding:10px 12px;border-radius:8px;font-size:14px;resize:vertical;
+  }
+  .comment-form input:focus, .comment-form textarea:focus,
+  .modal input:focus, .modal textarea:focus{outline:2px solid var(--accent);outline-offset:1px;}
+  .comment-form textarea{min-height:70px;}
+  .comment-form .row-actions{display:flex;justify-content:flex-end;gap:10px;}
+  .comment{border:1px solid var(--border);background:var(--surface);border-radius:12px;padding:12px 14px;margin-bottom:10px;animation:fadeUp .3s ease-out both;}
+  .comment .c-head{display:flex;justify-content:space-between;gap:10px;margin-bottom:6px;}
+  .comment .c-author{font-weight:800;font-size:13px;color:var(--accent);}
+  .comment .c-date{color:var(--muted);font-size:11px;font-family:var(--mono);}
+  .comment .c-text{font-size:14px;white-space:pre-wrap;word-break:break-word;margin-bottom:10px;}
+  .c-reactions{display:flex;gap:8px;}
+  .react-btn{
+    display:flex;align-items:center;gap:6px;border:1px solid var(--border);background:#FAFBFD;
+    border-radius:20px;padding:5px 11px;font-size:12.5px;font-weight:700;color:var(--muted);
+    transition:border-color .15s, color .15s, transform .12s, background .15s;
+  }
+  .react-btn:active{transform:scale(0.9);}
+  .react-btn:hover:not(:disabled){border-color:var(--accent);color:var(--accent);}
+  .react-btn:disabled{cursor:default;}
+  .react-btn.active-like{border-color:var(--nokey);color:var(--nokey);background:rgba(16,185,129,0.08);}
+  .react-btn.active-dislike{border-color:var(--danger);color:var(--danger);background:rgba(239,68,68,0.08);}
+
+  /* ---------- Modal ---------- */
+  .overlay{
+    position:fixed;inset:0;background:rgba(15,17,25,0.55);backdrop-filter:blur(3px);
+    display:flex;align-items:center;justify-content:center;z-index:1000;padding:20px;
+    animation:overlayIn .18s ease-out;
+  }
+  .modal{
+    background:var(--surface);border:1px solid var(--border);border-radius:18px;
+    width:100%;max-width:460px;padding:24px;max-height:88vh;overflow-y:auto;
+    animation:pop .15s ease-out;position:relative;
+  }
+  @keyframes pop{from{transform:scale(.96);opacity:0;}to{transform:scale(1);opacity:1;}}
+  .modal h3{margin:0 0 16px;font-size:18px;font-weight:800;}
+  .field{margin-bottom:14px;}
+  .field label{display:block;font-size:12px;color:var(--muted);margin-bottom:6px;font-family:var(--mono);}
+  .field input[type=text], .field input[type=file], .field textarea{
+    width:100%;background:#FAFBFD;border:1px solid var(--border);color:var(--text);
+    padding:10px 12px;border-radius:8px;font-size:14px;resize:vertical;
+  }
+  .field textarea{min-height:100px;font-family:var(--mono);font-size:13px;}
+  .checkline{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text);margin-bottom:14px;}
+  .checkline input{width:16px;height:16px;accent-color:var(--accent);}
+  .modal-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:6px;}
+  .inline-error{color:var(--danger);font-size:13px;margin-top:-6px;margin-bottom:12px;font-family:var(--mono);}
+
+  .gate-hint{color:var(--muted);font-size:13px;margin-bottom:14px;}
+  .gate-links{display:flex;flex-direction:column;gap:10px;margin-bottom:18px;}
+  .gate-link{
+    display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;text-align:left;
+    border:1px solid var(--border);background:#FAFBFD;border-radius:11px;
+    padding:13px 14px;text-decoration:none;color:var(--text);font-size:14px;font-weight:600;
+    transition:border-color .15s, background .15s;
+  }
+  .gate-link:hover{border-color:var(--accent);}
+  .gate-link.visited{border-color:var(--nokey);background:rgba(16,185,129,0.07);}
+  .gate-link .n{color:var(--muted);font-family:var(--mono);font-size:12px;font-weight:600;}
+  .gate-link.visited .n{color:var(--nokey);}
+
+  .code-box{position:relative;}
+  .code-box pre{
+    background:#12141C;border:1px solid var(--border);border-radius:11px;
+    padding:16px;font-family:var(--mono);font-size:13px;color:#B9F7E8;
+    max-height:280px;overflow:auto;white-space:pre-wrap;word-break:break-word;margin:0 0 14px;
+  }
+  .close-x{
+    position:absolute;top:16px;right:16px;background:none;border:none;color:var(--muted);
+    font-size:20px;line-height:1;padding:4px;
+  }
+  .close-x:hover{color:var(--text);}
+  .footer-note{text-align:center;color:var(--muted);font-size:12px;margin-top:40px;font-family:var(--mono);}
+  .file-preview{margin-top:8px;border-radius:10px;overflow:hidden;border:1px solid var(--border);display:none;}
+  .file-preview img{width:100%;display:block;max-height:140px;object-fit:cover;}
+  @media(max-width:520px){
+    .hero{padding:36px 22px;}
+    .hero h1{font-size:26px;}
+    .grid{grid-template-columns:repeat(auto-fill, minmax(150px, 1fr));}
+  }
+  @media(max-width:640px){
+    .nav-inner{grid-template-columns:1fr auto;grid-template-areas:"logo right" "tabs tabs";row-gap:10px;}
+    .nav-inner>.logo{grid-area:logo;}
+    .nav-inner>.nav-right{grid-area:right;}
+    .nav-inner>.tabs{grid-area:tabs;width:100%;justify-content:center;}
+  }
+</style>
+</head>
+<body>
+<div id="app"></div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-storage-compat.js"></script>
+
+<script>
+/* ============ Firebase init ============ */
+const firebaseConfig = {
+  apiKey: "AIzaSyCkYBnmE6fv__osymaDhPHVUjdg60e_aos",
+  authDomain: "mypetrock-2b073.firebaseapp.com",
+  projectId: "mypetrock-2b073",
+  storageBucket: "mypetrock-2b073.firebasestorage.app",
+  messagingSenderId: "229284276416",
+  appId: "1:229284276416:web:13148d0ace35ce5afba525",
+  measurementId: "G-NXYFFVH6LG"
+};
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+const storage = firebase.storage();
+
+const ADMIN_PASSWORD = "71234";
+const app = document.getElementById('app');
+let allItems = [];
+let currentKind = 'script';
+let lang = 'en';
+function collectionFor(kind){ return kind === 'injector' ? 'injectors' : 'scripts'; }
+const PLACEHOLDER_COLORS = ['#6366F1','#0EA5E9','#F59E0B','#10B981','#EC4899','#8B5CF6'];
+
+/* ============ i18n ============ */
+function ruPlural(n, one, few, many){
+  const abs = Math.abs(n) % 100;
+  const n1 = abs % 10;
+  if(abs > 10 && abs < 20) return many;
+  if(n1 > 1 && n1 < 5) return few;
+  if(n1 === 1) return one;
+  return many;
+}
+const translations = {
+  en: {
+    addScript: '+ Add script',
+    heroTitle: 'Scripts for Roblox',
+    heroSubtitle: 'Ready-to-use scripts for different games — with key and without. Pick one, support the creators and run it.',
+    scriptsInBase: (n) => `${n} ${n === 1 ? 'script' : 'scripts'} in the base`,
+    searchPlaceholder: 'Search by name or game…',
+    resultsCount: (n) => `${n} ${n === 1 ? 'result' : 'results'}`,
+    loadingScripts: 'Loading scripts…',
+    emptyScripts: 'No scripts yet. Click “Add script” to publish the first one.',
+    errorScripts: 'Couldn’t load scripts. Check your Firestore rules and connection.',
+    nothingFound: 'Nothing found.',
+    key: 'Key',
+    noKey: 'No key',
+    footer: 'NbScripts 2026',
+    backLink: '← back to all scripts',
+    game: 'Game',
+    getScript: 'Get script',
+    comments: 'Comments',
+    commentPlaceholderName: 'Name (optional)',
+    commentPlaceholderText: 'Write a comment…',
+    send: 'Send',
+    loadingComments: 'Loading comments…',
+    emptyComments: 'No comments yet. Be the first.',
+    errorComments: 'Couldn’t load comments.',
+    commentEmptyError: 'Comment can’t be empty.',
+    commentSendError: 'Couldn’t send the comment. Check Firestore rules.',
+    scriptNotFoundEmpty: 'Script not found.',
+    scriptNotExist: 'This script doesn’t exist.',
+    errorLoadScript: 'Couldn’t load the script. Check your Firestore settings.',
+    passwordTitle: 'Enter password',
+    passwordLabel: 'Admin password',
+    passwordWrong: 'Wrong password',
+    cancel: 'Cancel',
+    logIn: 'Log in',
+    newScriptTitle: 'New script',
+    fieldName: 'Script name',
+    fieldGame: 'Game',
+    fieldImage: 'Image URL (optional)',
+    fieldCode: 'Script (code)',
+    fieldHasKey: 'Script requires a key',
+    fieldLink1: 'Support link 1 (optional)',
+    fieldLink2: 'Support link 2 (optional)',
+    fieldSkip: 'Disable subscription requirement',
+    fieldGateText: 'Support screen text (optional)',
+    fieldGateTextPlaceholder: 'e.g. "Like the video and subscribe to unlock"',
+    fieldDescription: 'Description (optional)',
+    fieldDescriptionPlaceholder: 'What does the script do, how to use it…',
+    publish: 'Publish',
+    publishing: 'Publishing…',
+    fillRequired: 'Fill in the name, game and the script itself.',
+    saveError: 'Couldn’t save. Check your Firestore rules.',
+    gateTitle: 'Support the author to get the script',
+    gateHint: 'Open every link — the button unlocks once all of them are marked.',
+    channel: (n) => `Channel ${n}`,
+    open: 'open →',
+    opened: 'opened ✓',
+    getScriptCount: (a,b) => `Get script (${a}/${b})`,
+    yourScript: 'Your script',
+    copy: 'Copy',
+    copied: 'Copied ✓',
+    anon: 'Anonymous',
+    reportScript: 'Report a problem',
+    reportTitle: 'Report a problem',
+    reportHint: 'Something not working? Broken link, wrong script, doesn’t work — let us know.',
+    reportPlaceholder: 'Describe the problem…',
+    reportSend: 'Send report',
+    reportEmptyError: 'Please describe the problem.',
+    reportSendError: 'Couldn’t send the report. Check your Firestore rules.',
+    reportThanksTitle: 'Thanks!',
+    reportThanksText: 'Your report has been sent. We’ll take a look.',
+    tabScripts: 'Scripts',
+    tabInjectors: 'Injectors',
+    addInjector: '+ Add injector',
+    newInjectorTitle: 'New injector',
+    heroTitleInjectors: 'Injectors for Roblox',
+    heroSubtitleInjectors: 'Ready-to-use injectors for PC and mobile — pick one, support the creators and run it.',
+    injectorsInBase: (n) => `${n} ${n === 1 ? 'injector' : 'injectors'} in the base`,
+    emptyInjectors: 'No injectors yet. Click “Add injector” to publish the first one.',
+    errorInjectors: 'Couldn’t load injectors. Check your Firestore rules and connection.',
+    injectorNotFoundEmpty: 'Injector not found.',
+    injectorNotExist: 'This injector doesn’t exist.',
+    errorLoadInjector: 'Couldn’t load the injector. Check your Firestore settings.',
+    backLinkInjectors: '← back to all injectors',
+    getInjector: 'Get injector',
+    fieldPlatform: 'Platform',
+    platformPc: 'PC',
+    platformMobile: 'Phone',
+    recommended: 'You might also like',
+    fieldNameScript: 'Script name',
+    fieldNameInjector: 'Injector name',
+    fieldDownloadLink: 'Download link',
+    fieldDownloadFile: 'Or upload a file',
+    fieldDownloadHint: 'Fill in the link, or upload a file, or both — whichever is easier.',
+    fillRequiredInjector: 'Fill in the name and a download link or a file.',
+    yourInjector: 'Your injector',
+    downloadBtn: 'Download',
+    copyLink: 'Copy link',
+    uploading: 'Uploading…',
+    uploadError: 'Couldn’t upload the file.',
+    removeFile: 'Remove file',
+    fileSelected: (name) => `Selected: ${name}`,
+    fieldVersion: 'Version',
+    version: 'Version',
+  },
+  ru: {
+    addScript: '+ Добавить скрипт',
+    heroTitle: 'Скрипты для Roblox',
+    heroSubtitle: 'Готовые скрипты для разных игр — с ключом и без. Выбирай, поддерживай авторов и запускай.',
+    scriptsInBase: (n) => `${n} ${ruPlural(n, 'скрипт', 'скрипта', 'скриптов')} в базе`,
+    searchPlaceholder: 'Поиск по названию или игре…',
+    resultsCount: (n) => `${n} ${ruPlural(n, 'результат', 'результата', 'результатов')}`,
+    loadingScripts: 'Загрузка скриптов…',
+    emptyScripts: 'Пока нет ни одного скрипта. Нажми «Добавить скрипт», чтобы выложить первый.',
+    errorScripts: 'Не удалось загрузить скрипты. Проверь настройки Firestore и подключение.',
+    nothingFound: 'Ничего не найдено.',
+    key: 'Ключ',
+    noKey: 'Без ключа',
+    footer: 'NbScripts 2026',
+    backLink: '← ко всем скриптам',
+    game: 'Игра',
+    getScript: 'Получить скрипт',
+    comments: 'Комментарии',
+    commentPlaceholderName: 'Имя (необязательно)',
+    commentPlaceholderText: 'Написать комментарий…',
+    send: 'Отправить',
+    loadingComments: 'Загрузка комментариев…',
+    emptyComments: 'Пока нет комментариев. Будь первым.',
+    errorComments: 'Не удалось загрузить комментарии.',
+    commentEmptyError: 'Комментарий не может быть пустым.',
+    commentSendError: 'Не удалось отправить комментарий. Проверь правила Firestore.',
+    scriptNotFoundEmpty: 'Скрипт не найден.',
+    scriptNotExist: 'Такого скрипта не существует.',
+    errorLoadScript: 'Не удалось загрузить скрипт. Проверь настройки Firestore.',
+    passwordTitle: 'Введите пароль',
+    passwordLabel: 'Пароль администратора',
+    passwordWrong: 'Неверный пароль',
+    cancel: 'Отмена',
+    logIn: 'Войти',
+    newScriptTitle: 'Новый скрипт',
+    fieldName: 'Название скрипта',
+    fieldGame: 'Игра',
+    fieldImage: 'Ссылка на картинку (необязательно)',
+    fieldCode: 'Сам скрипт (код)',
+    fieldHasKey: 'Скрипт с ключом',
+    fieldLink1: 'Ссылка на поддержку 1 (необязательно)',
+    fieldLink2: 'Ссылка на поддержку 2 (необязательно)',
+    fieldSkip: 'Отключить требование подписки',
+    fieldGateText: 'Текст на экране поддержки (необязательно)',
+    fieldGateTextPlaceholder: 'например: «Поставь лайк и подпишись, чтобы получить скрипт»',
+    fieldDescription: 'Описание (необязательно)',
+    fieldDescriptionPlaceholder: 'Что делает скрипт, как им пользоваться…',
+    publish: 'Опубликовать',
+    publishing: 'Публикуем…',
+    fillRequired: 'Заполни название, игру и сам скрипт.',
+    saveError: 'Не удалось сохранить. Проверь правила Firestore.',
+    gateTitle: 'Поддержи автора, чтобы получить скрипт',
+    gateHint: 'Открой каждую ссылку — кнопка получения станет активной, когда все будут отмечены.',
+    channel: (n) => `Канал ${n}`,
+    open: 'открыть →',
+    opened: 'открыто ✓',
+    getScriptCount: (a,b) => `Получить скрипт (${a}/${b})`,
+    yourScript: 'Твой скрипт',
+    copy: 'Скопировать',
+    copied: 'Скопировано ✓',
+    anon: 'Аноним',
+    reportScript: 'Пожаловаться',
+    reportTitle: 'Пожаловаться на скрипт',
+    reportHint: 'Что-то не работает? Битая ссылка, не тот скрипт, ошибка — напиши, в чём дело.',
+    reportPlaceholder: 'Опиши проблему…',
+    reportSend: 'Отправить жалобу',
+    reportEmptyError: 'Опиши проблему.',
+    reportSendError: 'Не удалось отправить жалобу. Проверь правила Firestore.',
+    reportThanksTitle: 'Спасибо!',
+    reportThanksText: 'Жалоба отправлена. Мы разберёмся.',
+    tabScripts: 'Скрипты',
+    tabInjectors: 'Инджекторы',
+    addInjector: '+ Добавить инджектор',
+    newInjectorTitle: 'Новый инджектор',
+    heroTitleInjectors: 'Инджекторы для Roblox',
+    heroSubtitleInjectors: 'Готовые инджекторы для ПК и телефона — выбирай, поддерживай авторов и запускай.',
+    injectorsInBase: (n) => `${n} ${ruPlural(n, 'инджектор', 'инджектора', 'инджекторов')} в базе`,
+    emptyInjectors: 'Пока нет ни одного инджектора. Нажми «Добавить инджектор», чтобы выложить первый.',
+    errorInjectors: 'Не удалось загрузить инджекторы. Проверь настройки Firestore и подключение.',
+    injectorNotFoundEmpty: 'Инджектор не найден.',
+    injectorNotExist: 'Такого инджектора не существует.',
+    errorLoadInjector: 'Не удалось загрузить инджектор. Проверь настройки Firestore.',
+    backLinkInjectors: '← ко всем инджекторам',
+    getInjector: 'Получить инджектор',
+    fieldPlatform: 'Платформа',
+    platformPc: 'ПК',
+    platformMobile: 'Телефон',
+    recommended: 'Похожее',
+    fieldNameScript: 'Название скрипта',
+    fieldNameInjector: 'Название инджектора',
+    fieldDownloadLink: 'Ссылка на скачивание',
+    fieldDownloadFile: 'Или загрузи файл',
+    fieldDownloadHint: 'Заполни ссылку, или загрузи файл, или и то и другое — как удобнее.',
+    fillRequiredInjector: 'Заполни название и ссылку или файл на скачивание.',
+    yourInjector: 'Твой инджектор',
+    downloadBtn: 'Скачать',
+    copyLink: 'Скопировать ссылку',
+    uploading: 'Загрузка…',
+    uploadError: 'Не удалось загрузить файл.',
+    removeFile: 'Убрать файл',
+    fileSelected: (name) => `Выбран файл: ${name}`,
+    fieldVersion: 'Версия',
+    version: 'Версия',
+  }
+};
+function t(key, ...args){
+  const val = translations[lang][key];
+  if(typeof val === 'function') return val(...args);
+  return val !== undefined ? val : key;
+}
+function localeStr(){ return lang === 'ru' ? 'ru-RU' : 'en-US'; }
+
+/* ============ Reactions (likes/dislikes) storage ============ */
+function getReactions(){
+  try{ return JSON.parse(localStorage.getItem('nb_reactions') || '{}'); }catch(e){ return {}; }
+}
+function setReactions(obj){
+  try{ localStorage.setItem('nb_reactions', JSON.stringify(obj)); }catch(e){}
+}
+
+/* ============ Helpers ============ */
+function esc(str){
+  const d = document.createElement('div');
+  d.textContent = str ?? '';
+  return d.innerHTML;
+}
+function fmtDate(ts){
+  if(!ts || !ts.toDate) return '';
+  const d = ts.toDate();
+  return d.toLocaleDateString(localeStr(), {day:'2-digit', month:'2-digit', year:'numeric'});
+}
+function fmtDateTime(ts){
+  if(!ts || !ts.toDate) return '';
+  const d = ts.toDate();
+  return d.toLocaleDateString(localeStr(), {day:'2-digit', month:'2-digit', year:'numeric'}) + ' ' +
+         d.toLocaleTimeString(localeStr(), {hour:'2-digit', minute:'2-digit'});
+}
+function colorFor(str){
+  let h = 0;
+  for(let i=0;i<(str||'').length;i++) h = (h*31 + str.charCodeAt(i)) % PLACEHOLDER_COLORS.length;
+  return PLACEHOLDER_COLORS[Math.abs(h)];
+}
+function thumbHtml(s){
+  if(s.image){
+    return `<img class="thumb" src="${esc(s.image)}" alt="${esc(s.name||'')}">`;
+  }
+  const letter = (s.name || '?').trim().charAt(0).toUpperCase() || '?';
+  return `<div class="thumb ph" style="background:${colorFor(s.name || s.game || 'x')};">${esc(letter)}</div>`;
+}
+
+/* ============ Modal system ============ */
+function openModal(innerHtml){
+  closeModal();
+  const overlay = document.createElement('div');
+  overlay.className = 'overlay';
+  overlay.id = 'nb-overlay';
+  overlay.innerHTML = `<div class="modal">${innerHtml}</div>`;
+  overlay.addEventListener('click', (e) => { if(e.target === overlay) closeModal(); });
+  document.body.appendChild(overlay);
+  return overlay;
+}
+function closeModal(){
+  const ex = document.getElementById('nb-overlay');
+  if(ex) ex.remove();
+}
+
+/* ============ Router ============ */
+window.addEventListener('hashchange', router);
+window.addEventListener('DOMContentLoaded', router);
+
+function router(){
+  const hash = location.hash || '#/';
+  if(hash.startsWith('#/script/')){
+    const id = decodeURIComponent(hash.split('/')[2] || '');
+    renderDetailPage(id, 'script');
+  } else if(hash.startsWith('#/injector/')){
+    const id = decodeURIComponent(hash.split('/')[2] || '');
+    renderDetailPage(id, 'injector');
+  } else if(hash.startsWith('#/injectors')){
+    renderHome('injector');
+  } else {
+    renderHome('script');
+  }
+}
+
+function navHeader(kind){
+  return `
+    <header class="nav">
+      <div class="nav-inner">
+        <a href="#/" class="logo"><span class="mark">Nb</span>NbScripts</a>
+        <div class="tabs">
+          <a href="#/" class="tab-btn ${kind==='script'?'active':''}">${t('tabScripts')}</a>
+          <a href="#/injectors" class="tab-btn ${kind==='injector'?'active':''}">${t('tabInjectors')}</a>
+        </div>
+        <div class="nav-right" style="display:flex;align-items:center;gap:10px;">
+          <div class="lang-switch">
+            <button class="lang-btn ${lang==='en'?'active':''}" id="lang-en">EN</button>
+            <button class="lang-btn ${lang==='ru'?'active':''}" id="lang-ru">RU</button>
+          </div>
+          <button class="btn btn-accent" id="add-btn">${kind==='injector' ? t('addInjector') : t('addScript')}</button>
+        </div>
+      </div>
+    </header>
+  `;
+}
+function bindNavHandlers(kind){
+  document.getElementById('add-btn').onclick = () => openPasswordModal(kind);
+  document.getElementById('lang-en').onclick = () => { lang = 'en'; router(); };
+  document.getElementById('lang-ru').onclick = () => { lang = 'ru'; router(); };
+}
+
+/* ============ Home page ============ */
+function renderHome(kind){
+  currentKind = kind;
+  const isInj = kind === 'injector';
+  document.title = isInj ? 'NbScripts — Roblox Injectors' : 'NbScripts — Roblox Scripts';
+  app.innerHTML = `
+    ${navHeader(kind)}
+    <div class="wrap">
+      <div class="hero">
+        <h1>${isInj ? t('heroTitleInjectors') : t('heroTitle')}</h1>
+        <p>${isInj ? t('heroSubtitleInjectors') : t('heroSubtitle')}</p>
+        <span class="pill" id="hero-count">— </span>
+      </div>
+      <div class="search-wrap">
+        <div class="search-box">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <input type="text" id="search-input" placeholder="${t('searchPlaceholder')}">
+        </div>
+      </div>
+      <div class="toolbar">
+        <span class="count" id="script-count"></span>
+      </div>
+      <div class="grid" id="grid"><div class="loading">${t('loadingScripts')}</div></div>
+      <div class="footer-note">${t('footer')}</div>
+    </div>
+  `;
+  bindNavHandlers(kind);
+  document.getElementById('search-input').addEventListener('input', (e) => {
+    renderGrid(filterItems(e.target.value), kind);
+  });
+  loadItems(kind);
+}
+
+function filterItems(query){
+  const q = (query || '').trim().toLowerCase();
+  if(!q) return allItems;
+  return allItems.filter(s =>
+    (s.name || '').toLowerCase().includes(q) || (s.game || '').toLowerCase().includes(q)
+  );
+}
+
+function renderGrid(list, kind){
+  const isInj = kind === 'injector';
+  const grid = document.getElementById('grid');
+  const countEl = document.getElementById('script-count');
+  const heroCount = document.getElementById('hero-count');
+  if(!grid) return;
+  if(heroCount) heroCount.textContent = isInj ? t('injectorsInBase', allItems.length) : t('scriptsInBase', allItems.length);
+  if(countEl) countEl.textContent = t('resultsCount', list.length);
+  if(list.length === 0){
+    const emptyMsg = allItems.length === 0 ? (isInj ? t('emptyInjectors') : t('emptyScripts')) : t('nothingFound');
+    grid.innerHTML = `<div class="empty">${emptyMsg}</div>`;
+    return;
+  }
+  grid.innerHTML = list.map((s, i) => `
+    <a class="card" href="#/${kind}/${encodeURIComponent(s.id)}" style="animation-delay:${Math.min(i,10) * 45}ms;">
+      ${thumbHtml(s)}
+      <div class="card-body">
+        <div class="card-name">${esc(s.name || '—')}</div>
+        <div class="card-meta">
+          ${!isInj ? `<span class="card-game">${esc(s.game || '—')}</span>` : `<span class="card-game">${s.version ? 'v' + esc(s.version) : '—'}</span>`}
+          <span class="badge ${s.hasKey ? 'key' : 'nokey'}">${s.hasKey ? t('key') : t('noKey')}</span>
+        </div>
+        <div class="card-meta">
+          ${isInj ? `<span class="badge platform">${s.platform === 'mobile' ? t('platformMobile') : t('platformPc')}</span>` : '<span></span>'}
+          <span class="card-date">${fmtDate(s.createdAt)}</span>
+        </div>
+      </div>
+    </a>
+  `).join('');
+}
+
+function loadItems(kind){
+  const isInj = kind === 'injector';
+  db.collection(collectionFor(kind)).get().then(snap => {
+    const grid = document.getElementById('grid');
+    if(!grid) return;
+    if(snap.empty){
+      allItems = [];
+      grid.innerHTML = `<div class="empty">${isInj ? t('emptyInjectors') : t('emptyScripts')}</div>`;
+      const heroCount = document.getElementById('hero-count');
+      if(heroCount) heroCount.textContent = isInj ? t('injectorsInBase', 0) : t('scriptsInBase', 0);
+      return;
+    }
+    let docs = [];
+    snap.forEach(doc => docs.push({id: doc.id, ...doc.data()}));
+    docs.sort((a,b) => {
+      const ta = a.createdAt && a.createdAt.toMillis ? a.createdAt.toMillis() : 0;
+      const tb = b.createdAt && b.createdAt.toMillis ? b.createdAt.toMillis() : 0;
+      return tb - ta;
+    });
+    allItems = docs;
+    const searchInput = document.getElementById('search-input');
+    renderGrid(filterItems(searchInput ? searchInput.value : ''), kind);
+  }).catch(err => {
+    console.error(err);
+    const grid = document.getElementById('grid');
+    if(grid) grid.innerHTML = `<div class="error">${isInj ? t('errorInjectors') : t('errorScripts')}</div>`;
+  });
+}
+
+/* ============ Add script/injector flow ============ */
+function openPasswordModal(kind){
+  openModal(`
+    <button class="close-x" onclick="closeModal()">✕</button>
+    <h3>${t('passwordTitle')}</h3>
+    <div class="field">
+      <label>${t('passwordLabel')}</label>
+      <input type="text" id="pw-input" autocomplete="off">
+    </div>
+    <div class="inline-error" id="pw-error" style="display:none;">${t('passwordWrong')}</div>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" onclick="closeModal()">${t('cancel')}</button>
+      <button class="btn btn-accent" id="pw-submit">${t('logIn')}</button>
+    </div>
+  `);
+  const input = document.getElementById('pw-input');
+  input.focus();
+  const submit = () => {
+    if(input.value === ADMIN_PASSWORD){
+      openAddModal(kind);
+    } else {
+      document.getElementById('pw-error').style.display = 'block';
+    }
+  };
+  document.getElementById('pw-submit').onclick = submit;
+  input.addEventListener('keydown', e => { if(e.key === 'Enter') submit(); });
+}
+
+function openAddModal(kind){
+  const isInj = kind === 'injector';
+  openModal(`
+    <button class="close-x" onclick="closeModal()">✕</button>
+    <h3>${isInj ? t('newInjectorTitle') : t('newScriptTitle')}</h3>
+    <div class="field">
+      <label>${isInj ? t('fieldNameInjector') : t('fieldNameScript')}</label>
+      <input type="text" id="f-name">
+    </div>
+    ${!isInj ? `
+    <div class="field">
+      <label>${t('fieldGame')}</label>
+      <input type="text" id="f-game">
+    </div>` : ''}
+    ${isInj ? `
+    <div class="field">
+      <label>${t('fieldVersion')}</label>
+      <input type="text" id="f-version" placeholder="1.0">
+    </div>` : ''}
+    ${isInj ? `
+    <div class="field">
+      <label>${t('fieldPlatform')}</label>
+      <select id="f-platform" style="width:100%;background:#FAFBFD;border:1px solid var(--border);color:var(--text);padding:10px 12px;border-radius:8px;font-size:14px;">
+        <option value="pc">${t('platformPc')}</option>
+        <option value="mobile">${t('platformMobile')}</option>
+      </select>
+    </div>` : ''}
+    <div class="field">
+      <label>${t('fieldImage')}</label>
+      <input type="text" id="f-image-url" placeholder="https://...">
+      <div class="file-preview" id="f-image-preview"><img id="f-image-preview-img"></div>
+    </div>
+    ${isInj ? `
+    <div class="field">
+      <label>${t('fieldDownloadLink')}</label>
+      <input type="text" id="f-dl-link" placeholder="https://...">
+    </div>
+    <div class="field">
+      <label>${t('fieldDownloadFile')}</label>
+      <input type="file" id="f-dl-file">
+      <div class="inline-hint" id="f-dl-filename" style="display:none;font-size:12px;color:var(--muted);margin-top:6px;font-family:var(--mono);"></div>
+    </div>
+    <div class="gate-hint" style="margin:-6px 0 14px;">${t('fieldDownloadHint')}</div>
+    ` : `
+    <div class="field">
+      <label>${t('fieldCode')}</label>
+      <textarea id="f-code"></textarea>
+    </div>`}
+    <div class="field">
+      <label>${t('fieldDescription')}</label>
+      <textarea id="f-description" placeholder="${t('fieldDescriptionPlaceholder')}"></textarea>
+    </div>
+    <div class="checkline">
+      <input type="checkbox" id="f-haskey">
+      <label for="f-haskey" style="margin:0;color:var(--text);">${t('fieldHasKey')}</label>
+    </div>
+    <div class="field">
+      <label>${t('fieldLink1')}</label>
+      <input type="text" id="f-link1" placeholder="https://...">
+    </div>
+    <div class="field">
+      <label>${t('fieldLink2')}</label>
+      <input type="text" id="f-link2" placeholder="https://...">
+    </div>
+    <div class="checkline">
+      <input type="checkbox" id="f-skip">
+      <label for="f-skip" style="margin:0;color:var(--text);">${t('fieldSkip')}</label>
+    </div>
+    <div class="field">
+      <label>${t('fieldGateText')}</label>
+      <textarea id="f-gatetext" placeholder="${t('fieldGateTextPlaceholder')}"></textarea>
+    </div>
+    <div class="inline-error" id="add-error" style="display:none;"></div>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" onclick="closeModal()">${t('cancel')}</button>
+      <button class="btn btn-accent" id="add-submit">${t('publish')}</button>
+    </div>
+  `);
+
+  const imageUrlInput = document.getElementById('f-image-url');
+  const preview = document.getElementById('f-image-preview');
+  const previewImg = document.getElementById('f-image-preview-img');
+  imageUrlInput.addEventListener('input', () => {
+    const url = imageUrlInput.value.trim();
+    if(url){
+      previewImg.src = url;
+      preview.style.display = 'block';
+    } else {
+      preview.style.display = 'none';
+    }
+  });
+  previewImg.addEventListener('error', () => { preview.style.display = 'none'; });
+
+  const dlFileInput = document.getElementById('f-dl-file');
+  const dlFileName = document.getElementById('f-dl-filename');
+  if(dlFileInput){
+    dlFileInput.addEventListener('change', () => {
+      const f = dlFileInput.files && dlFileInput.files[0];
+      if(f){
+        dlFileName.textContent = t('fileSelected', f.name);
+        dlFileName.style.display = 'block';
+      } else {
+        dlFileName.style.display = 'none';
+      }
+    });
+  }
+
+  document.getElementById('add-submit').onclick = () => {
+    const name = document.getElementById('f-name').value.trim();
+    const gameEl = document.getElementById('f-game');
+    const game = gameEl ? gameEl.value.trim() : '';
+    const codeEl = document.getElementById('f-code');
+    const code = codeEl ? codeEl.value.trim() : '';
+    const dlLinkEl = document.getElementById('f-dl-link');
+    const dlLink = dlLinkEl ? dlLinkEl.value.trim() : '';
+    const dlFile = dlFileInput && dlFileInput.files ? dlFileInput.files[0] : null;
+    const hasKey = document.getElementById('f-haskey').checked;
+    const link1 = document.getElementById('f-link1').value.trim();
+    const link2 = document.getElementById('f-link2').value.trim();
+    const skipLinks = document.getElementById('f-skip').checked;
+    const imageUrl = imageUrlInput.value.trim();
+    const gateText = document.getElementById('f-gatetext').value.trim();
+    const description = document.getElementById('f-description').value.trim();
+    const platformEl = document.getElementById('f-platform');
+    const platform = platformEl ? platformEl.value : null;
+    const versionEl = document.getElementById('f-version');
+    const version = versionEl ? versionEl.value.trim() : '';
+    const errEl = document.getElementById('add-error');
+
+    if(isInj){
+      if(!name || (!dlLink && !dlFile)){
+        errEl.textContent = t('fillRequiredInjector');
+        errEl.style.display = 'block';
+        return;
+      }
+    } else {
+      if(!name || !game || !code){
+        errEl.textContent = t('fillRequired');
+        errEl.style.display = 'block';
+        return;
+      }
+    }
+    errEl.style.display = 'none';
+    const links = [link1, link2].filter(Boolean);
+    const submitBtn = document.getElementById('add-submit');
+    submitBtn.disabled = true;
+    submitBtn.textContent = t('publishing');
+
+    const finish = (finalCode) => {
+      const payload = {
+        name, code: finalCode, hasKey, links, skipLinks,
+        image: imageUrl || null,
+        gateHint: gateText || null,
+        description: description || null,
+        createdAt: firebase.firestore.FieldValue.serverTimestamp()
+      };
+      if(isInj){
+        payload.game = null;
+        payload.platform = platform || 'pc';
+        payload.version = version || null;
+      } else {
+        payload.game = game;
+      }
+      submitToDb(payload);
+    };
+
+    const submitToDb = (payload) => {
+      db.collection(collectionFor(kind)).add(payload).then(() => {
+        closeModal();
+        loadItems(kind);
+      }).catch(err => {
+        console.error(err);
+        errEl.textContent = t('saveError');
+        errEl.style.display = 'block';
+        submitBtn.disabled = false;
+        submitBtn.textContent = t('publish');
+      });
+    };
+
+    if(isInj && dlFile){
+      submitBtn.textContent = t('uploading');
+      const path = `injectors/${Date.now()}_${dlFile.name}`;
+      const ref = storage.ref().child(path);
+      ref.put(dlFile).then(snap => snap.ref.getDownloadURL()).then(url => {
+        finish(url);
+      }).catch(err => {
+        console.error(err);
+        errEl.textContent = t('uploadError');
+        errEl.style.display = 'block';
+        submitBtn.disabled = false;
+        submitBtn.textContent = t('publish');
+      });
+      return;
+    }
+
+    finish(isInj ? dlLink : code);
+  };
+}
+
+/* ============ Detail page (script or injector) ============ */
+function renderDetailPage(id, kind){
+  currentKind = kind;
+  const isInj = kind === 'injector';
+  app.innerHTML = `
+    ${navHeader(kind)}
+    <div class="wrap wrap-detail">
+      <a href="#/${isInj ? 'injectors' : ''}" class="backlink">${isInj ? t('backLinkInjectors') : t('backLink')}</a>
+      <div class="detail-layout">
+        <div id="script-page-body" class="detail-main"><div class="loading">${t('loadingScripts')}</div></div>
+        <aside class="detail-aside" id="detail-aside"></aside>
+      </div>
+    </div>
+  `;
+  bindNavHandlers(kind);
+
+  if(!id){
+    document.getElementById('script-page-body').innerHTML = `<div class="error">${isInj ? t('injectorNotFoundEmpty') : t('scriptNotFoundEmpty')}</div>`;
+    return;
+  }
+
+  db.collection(collectionFor(kind)).doc(id).get().then(doc => {
+    const body = document.getElementById('script-page-body');
+    if(!body) return;
+    if(!doc.exists){
+      body.innerHTML = `<div class="error">${isInj ? t('injectorNotExist') : t('scriptNotExist')}</div>`;
+      return;
+    }
+    const s = doc.data();
+    document.title = `${s.name || (isInj ? 'Injector' : 'Script')} — NbScripts`;
+    body.innerHTML = `
+      <div class="script-card">
+        ${s.image ? `<div class="banner-wrap"><img class="script-banner" src="${esc(s.image)}" alt="${esc(s.name||'')}"></div>` : ''}
+        <div class="script-body">
+          <h2>${esc(s.name || '—')}</h2>
+          <div class="meta-line">
+            ${!isInj ? `<span class="game">${t('game')}: ${esc(s.game || '—')}</span>` : (s.version ? `<span class="game">${t('version')}: ${esc(s.version)}</span>` : '')}
+            <span class="badge ${s.hasKey ? 'key' : 'nokey'}">${s.hasKey ? t('key') : t('noKey')}</span>
+            ${isInj ? `<span class="badge platform">${s.platform === 'mobile' ? t('platformMobile') : t('platformPc')}</span>` : ''}
+          </div>
+          ${s.description ? `<p class="script-desc">${esc(s.description)}</p>` : ''}
+          <button class="btn btn-accent get-btn" id="get-script-btn">${isInj ? t('getInjector') : t('getScript')}</button>
+          <button class="btn btn-report" id="report-script-btn">${t('reportScript')}</button>
+        </div>
+      </div>
+      <div class="comments">
+        <h3>${t('comments')}</h3>
+        <div class="comment-form">
+          <input type="text" id="c-author" placeholder="${t('commentPlaceholderName')}">
+          <textarea id="c-text" placeholder="${t('commentPlaceholderText')}"></textarea>
+          <div class="inline-error" id="c-error" style="display:none;"></div>
+          <div class="row-actions">
+            <button class="btn btn-accent" id="c-submit">${t('send')}</button>
+          </div>
+        </div>
+        <div id="comments-list"><div class="loading">${t('loadingComments')}</div></div>
+      </div>
+    `;
+
+    document.getElementById('get-script-btn').onclick = () => handleGetScript(s);
+    document.getElementById('report-script-btn').onclick = () => openReportModal(id, s);
+    document.getElementById('c-submit').onclick = () => submitComment(id);
+    loadComments(id);
+    loadRecommendations(kind, id, s.game);
+  }).catch(err => {
+    console.error(err);
+    const body = document.getElementById('script-page-body');
+    if(body) body.innerHTML = `<div class="error">${isInj ? t('errorLoadInjector') : t('errorLoadScript')}</div>`;
+  });
+}
+
+/* ============ Recommendations sidebar ============ */
+function asideThumbHtml(s){
+  if(s.image){
+    return `<img class="aside-thumb" src="${esc(s.image)}" alt="">`;
+  }
+  const letter = (s.name || '?').trim().charAt(0).toUpperCase() || '?';
+  return `<div class="aside-thumb ph" style="background:${colorFor(s.name || s.game || 'x')};">${esc(letter)}</div>`;
+}
+
+function loadRecommendations(kind, currentId, currentGame){
+  db.collection(collectionFor(kind)).get().then(snap => {
+    const aside = document.getElementById('detail-aside');
+    if(!aside) return;
+    let docs = [];
+    snap.forEach(doc => { if(doc.id !== currentId) docs.push({id: doc.id, ...doc.data()}); });
+    if(docs.length === 0){ aside.innerHTML = ''; return; }
+    docs.sort((a, b) => {
+      const aMatch = (a.game || '') && (a.game || '') === (currentGame || '') ? 1 : 0;
+      const bMatch = (b.game || '') && (b.game || '') === (currentGame || '') ? 1 : 0;
+      if(aMatch !== bMatch) return bMatch - aMatch;
+      const ta = a.createdAt && a.createdAt.toMillis ? a.createdAt.toMillis() : 0;
+      const tb = b.createdAt && b.createdAt.toMillis ? b.createdAt.toMillis() : 0;
+      return tb - ta;
+    });
+    const list = docs.slice(0, 5);
+    aside.innerHTML = `
+      <div class="aside-title">${t('recommended')}</div>
+      <div class="aside-list">
+        ${list.map((s, i) => `
+          <a class="aside-card" href="#/${kind}/${encodeURIComponent(s.id)}" style="animation-delay:${i * 45}ms;">
+            ${asideThumbHtml(s)}
+            <div class="aside-card-body">
+              <div class="aside-card-name">${esc(s.name || '—')}</div>
+              ${kind !== 'injector' ? `<div class="aside-card-game">${esc(s.game || '—')}</div>` : (s.version ? `<div class="aside-card-game">v${esc(s.version)}</div>` : '')}
+            </div>
+          </a>
+        `).join('')}
+      </div>
+    `;
+  }).catch(err => {
+    console.error(err);
+    const aside = document.getElementById('detail-aside');
+    if(aside) aside.innerHTML = '';
+  });
+}
+
+function openReportModal(scriptId, s){
+  openModal(`
+    <button class="close-x" onclick="closeModal()">✕</button>
+    <h3>${t('reportTitle')}</h3>
+    <p class="gate-hint">${t('reportHint')}</p>
+    <div class="field">
+      <textarea id="report-text" placeholder="${t('reportPlaceholder')}"></textarea>
+    </div>
+    <div class="inline-error" id="report-error" style="display:none;"></div>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" onclick="closeModal()">${t('cancel')}</button>
+      <button class="btn btn-accent" id="report-submit">${t('reportSend')}</button>
+    </div>
+  `);
+  const textEl = document.getElementById('report-text');
+  textEl.focus();
+  document.getElementById('report-submit').onclick = () => {
+    const reason = textEl.value.trim();
+    const errEl = document.getElementById('report-error');
+    if(!reason){
+      errEl.textContent = t('reportEmptyError');
+      errEl.style.display = 'block';
+      return;
+    }
+    errEl.style.display = 'none';
+    const btn = document.getElementById('report-submit');
+    btn.disabled = true;
+    db.collection('reports').add({
+      scriptId, scriptName: s.name || '', kind: currentKind,
+      reason,
+      createdAt: firebase.firestore.FieldValue.serverTimestamp()
+    }).then(() => {
+      openModal(`
+        <button class="close-x" onclick="closeModal()">✕</button>
+        <h3>${t('reportThanksTitle')}</h3>
+        <p class="gate-hint">${t('reportThanksText')}</p>
+      `);
+    }).catch(err => {
+      console.error(err);
+      errEl.textContent = t('reportSendError');
+      errEl.style.display = 'block';
+      btn.disabled = false;
+    });
+  };
+}
+
+function handleGetScript(s){
+  const links = Array.isArray(s.links) ? s.links.filter(Boolean) : [];
+  if(s.skipLinks || links.length === 0){
+    openRevealModal(s.code);
+    return;
+  }
+  const visited = new Set();
+  openModal(`
+    <button class="close-x" onclick="closeModal()">✕</button>
+    <h3>${t('gateTitle')}</h3>
+    <p class="gate-hint">${esc(s.gateHint) || t('gateHint')}</p>
+    <div class="gate-links" id="gate-links">
+      ${links.map((l, idx) => `
+        <a class="gate-link" data-idx="${idx}" href="${esc(l)}" target="_blank" rel="noopener noreferrer">
+          <span>${t('channel', idx + 1)}</span><span class="n" data-n="${idx}">${t('open')}</span>
+        </a>
+      `).join('')}
+    </div>
+    <button class="btn btn-accent get-btn" id="confirm-sub-btn" disabled>${t('getScriptCount', 0, links.length)}</button>
+  `);
+
+  const confirmBtn = document.getElementById('confirm-sub-btn');
+  document.querySelectorAll('#gate-links .gate-link').forEach(el => {
+    el.addEventListener('click', () => {
+      const idx = el.getAttribute('data-idx');
+      if(!visited.has(idx)){
+        visited.add(idx);
+        el.classList.add('visited');
+        const n = el.querySelector('.n');
+        if(n) n.textContent = t('opened');
+      }
+      confirmBtn.textContent = t('getScriptCount', visited.size, links.length);
+      confirmBtn.disabled = visited.size < links.length;
+    });
+  });
+  confirmBtn.onclick = () => {
+    if(confirmBtn.disabled) return;
+    openRevealModal(s.code);
+  };
+}
+
+function openRevealModal(code){
+  const isInj = currentKind === 'injector';
+  if(isInj){
+    openModal(`
+      <button class="close-x" onclick="closeModal()">✕</button>
+      <h3>${t('yourInjector')}</h3>
+      <a class="btn btn-accent get-btn" style="display:block;text-align:center;text-decoration:none;box-sizing:border-box;" href="${esc(code || '')}" target="_blank" rel="noopener noreferrer">${t('downloadBtn')}</a>
+      <button class="btn btn-ghost" id="copy-btn" style="width:100%;margin-top:10px;">${t('copyLink')}</button>
+    `);
+  } else {
+    openModal(`
+      <button class="close-x" onclick="closeModal()">✕</button>
+      <h3>${t('yourScript')}</h3>
+      <div class="code-box">
+        <pre id="reveal-code"></pre>
+        <button class="btn btn-accent" id="copy-btn" style="width:100%;">${t('copy')}</button>
+      </div>
+    `);
+    document.getElementById('reveal-code').textContent = code || '';
+  }
+  document.getElementById('copy-btn').onclick = (e) => {
+    navigator.clipboard.writeText(code || '').then(() => {
+      e.target.textContent = t('copied');
+      setTimeout(() => { if(e.target) e.target.textContent = isInj ? t('copyLink') : t('copy'); }, 1600);
+    });
+  };
+}
+
+/* ============ Comments ============ */
+function loadComments(scriptId){
+  db.collection('comments').where('scriptId', '==', scriptId).get().then(snap => {
+    const list = document.getElementById('comments-list');
+    if(!list) return;
+    if(snap.empty){
+      list.innerHTML = `<div class="empty" style="padding:20px;">${t('emptyComments')}</div>`;
+      return;
+    }
+    let docs = [];
+    snap.forEach(doc => docs.push({id: doc.id, ...doc.data()}));
+    docs.sort((a,b) => {
+      const ta = a.createdAt && a.createdAt.toMillis ? a.createdAt.toMillis() : 0;
+      const tb = b.createdAt && b.createdAt.toMillis ? b.createdAt.toMillis() : 0;
+      return tb - ta;
+    });
+    const reactions = getReactions();
+    list.innerHTML = docs.map((c, i) => {
+      const reacted = reactions[c.id];
+      const likes = c.likes || 0;
+      const dislikes = c.dislikes || 0;
+      return `
+        <div class="comment" style="animation-delay:${Math.min(i,8) * 40}ms;">
+          <div class="c-head">
+            <span class="c-author">${esc(c.author || t('anon'))}</span>
+            <span class="c-date">${fmtDateTime(c.createdAt)}</span>
+          </div>
+          <div class="c-text">${esc(c.text || '')}</div>
+          <div class="c-reactions">
+            <button class="react-btn ${reacted === 'like' ? 'active-like' : ''}" data-id="${c.id}" data-type="like">👍 ${likes}</button>
+            <button class="react-btn ${reacted === 'dislike' ? 'active-dislike' : ''}" data-id="${c.id}" data-type="dislike">👎 ${dislikes}</button>
+          </div>
+        </div>
+      `;
+    }).join('');
+    list.querySelectorAll('.react-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        reactToComment(btn.getAttribute('data-id'), btn.getAttribute('data-type'), scriptId);
+      });
+    });
+  }).catch(err => {
+    console.error(err);
+    const list = document.getElementById('comments-list');
+    if(list) list.innerHTML = `<div class="error">${t('errorComments')}</div>`;
+  });
+}
+
+function reactToComment(commentId, type, scriptId){
+  const reactions = getReactions();
+  const current = reactions[commentId];
+  const field = type === 'like' ? 'likes' : 'dislikes';
+  const otherField = type === 'like' ? 'dislikes' : 'likes';
+
+  let update;
+  let newReaction;
+  if(current === type){
+    // toggle off — remove the reaction
+    update = { [field]: firebase.firestore.FieldValue.increment(-1) };
+    newReaction = null;
+  } else if(current){
+    // switch reaction — remove old, add new
+    update = {
+      [otherField]: firebase.firestore.FieldValue.increment(-1),
+      [field]: firebase.firestore.FieldValue.increment(1)
+    };
+    newReaction = type;
+  } else {
+    // new reaction
+    update = { [field]: firebase.firestore.FieldValue.increment(1) };
+    newReaction = type;
+  }
+
+  db.collection('comments').doc(commentId).update(update).then(() => {
+    if(newReaction){ reactions[commentId] = newReaction; }
+    else { delete reactions[commentId]; }
+    setReactions(reactions);
+    loadComments(scriptId);
+  }).catch(err => console.error(err));
+}
+
+function submitComment(scriptId){
+  const authorEl = document.getElementById('c-author');
+  const textEl = document.getElementById('c-text');
+  const errEl = document.getElementById('c-error');
+  const text = textEl.value.trim();
+  const author = authorEl.value.trim() || t('anon');
+
+  if(!text){
+    errEl.textContent = t('commentEmptyError');
+    errEl.style.display = 'block';
+    return;
+  }
+  errEl.style.display = 'none';
+  const btn = document.getElementById('c-submit');
+  btn.disabled = true;
+
+  db.collection('comments').add({
+    scriptId, author, text, likes: 0, dislikes: 0,
+    createdAt: firebase.firestore.FieldValue.serverTimestamp()
+  }).then(() => {
+    textEl.value = '';
+    authorEl.value = '';
+    btn.disabled = false;
+    loadComments(scriptId);
+  }).catch(err => {
+    console.error(err);
+    errEl.textContent = t('commentSendError');
+    errEl.style.display = 'block';
+    btn.disabled = false;
+  });
+}
+</script>
+</body>
+</html>
